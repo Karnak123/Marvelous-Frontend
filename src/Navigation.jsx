@@ -16,7 +16,7 @@ function Navigation(props) {
 
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">MARVEL</Navbar.Brand>
+        <Navbar.Brand href="https://DutifulKnowledgeableEquations.sagnikmazumdar.repl.co">MARVEL</Navbar.Brand>
         <Nav className="mr-auto">
 
         </Nav>

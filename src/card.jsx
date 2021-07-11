@@ -9,13 +9,14 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 
+
 function Cardmade(props) {
   return(
     
   <Card bg={"danger"} text={'white'} className="m-3">
     <Card.Img variant="top" src={props.source} />
     <Card.Body>
-      <Card.Text>{props.name}</Card.Text>
+      <Card.Text><a href="https://ShadySameImplementation.santhoshiravich.repl.co">{props.name}</a></Card.Text>
     </Card.Body>
   </Card>
   );
