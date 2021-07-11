@@ -20,9 +20,9 @@ function Navigation(props) {
         <Nav className="mr-auto">
 
         </Nav>
-        <Form inline className="p-3">
+        <Form inline className="p-3" action="https://dutifulknowledgeableequations.sagnikmazumdar.repl.co/character.html" target="_blank">
           <FormControl type="text" placeholder="Search by Character" className="mr-sm-2" />
-          <Button variant="danger">Search </Button>
+          <Button onclick="window.location.href = 'https://website.com/my-account';" variant="danger">Search </Button>
         </Form>
         <Form inline className="p-3">
           <FormControl type="text" placeholder="Search by Creator" className="mr-sm-2" />
