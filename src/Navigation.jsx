@@ -14,7 +14,7 @@ import Button from 'react-bootstrap/Button'
 function Navigation(props) {
   return(
     
-  <container>
+  <div>
     <Navbar bg="dark" variant="dark" expand="lg">
     <Navbar.Brand href="#home">MARVEL</Navbar.Brand>
     <Nav className="mr-auto">
@@ -33,7 +33,7 @@ function Navigation(props) {
       <Button variant="danger">Search</Button>
     </Form>
   </Navbar>
-  </container>
+  </div>
   );
 }
 export default Navigation;

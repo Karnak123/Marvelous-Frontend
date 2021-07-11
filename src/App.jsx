@@ -13,29 +13,71 @@ import Cardlist from "./Cardlist";
 import Navigation from './Navigation';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; 
 import Homepages from './Homepages';
+import CreatorsList from './CreatorsList.json';
+import CharactersList from './CharactersList.json';
 
-// import './styles.css'
 
-class Temp extends React.Component {
+var cname = "Hulk";
+var cid = CharactersList.characters.find( record => record.name === cname).id;
+console.log(cid);
+
+function Bio() {
+  return (
+    <h1>{cname}</h1>
+  );
+}
+
+class CharacterSeries extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {"cid": props.character_id};
+  }
+
+  componentDidMount() {
+    var component = this;
+
+    fetch(`https://hacktoon.azurewebsites.net/Series/character/${component.state["cid"]}`, {
+      "method": "GET",
+      "headers": {
+        "accept": "*/*"
+      }
+    })
+    .then((resp) => resp.json())
+    .then((resp) => {
+      component.setState({count: resp.count, series: resp.series});
+    })
+  }
+
   render() {
-    return React.createElement("h1", null, "asdfgAfdsgf");
+    var count=this.state.count || "";
+    var series = this.state.series || "";
+
+    if (typeof(count)===typeof(8)) {
+      let temp = [];
+      let index = 0;
+      for (let i=0; i<2; ++i) {
+        let temp1 = [];
+        for (let j=0; j<6 && index<count; ++j, ++index) {
+          temp1.push(React.createElement(Cardmade, {"bg":"danger", "text":'white', "className":"m-3", "name": series[index]["title"], "source": series[index]["thumbnail"]["path"]+'/portrait_uncanny.jpg'}));
+        }
+        temp.push(React.createElement(CardDeck, {"className": "font "}, temp1));
+      }
+      return React.createElement("div", null, temp);
+    }
+    return React.createElement("div", null, React.createElement("img", {"src": "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_uncanny.jpg"}));
   }
 }
 
 function App() {
   return (
-    // <main>  
-    // <h1>MARVEL</h1>
     <div>
   <Navigation />
   <br />
-  <div><Temp/></div>
-<Cardlist />
-<Cardlist />
-
+  <div>
+    <Bio/>
   </div>
-  
-    // </main>
+  <CharacterSeries character_id={cid}/>
+  </div>
   );
 }
 
