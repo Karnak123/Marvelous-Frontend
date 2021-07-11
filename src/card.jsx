@@ -15,7 +15,7 @@ function Cardmade(props) {
   <Card bg={"danger"} text={'white'} className="m-3">
     <Card.Img variant="top" src={props.source} />
     <Card.Body>
-      <Card.Title>{props.name}</Card.Title>
+      <Card.Text>{props.name}</Card.Text>
     </Card.Body>
   </Card>
   );
