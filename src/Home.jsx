@@ -22,8 +22,12 @@ class Randoms extends React.Component {
   }
 
   render() {
-    let temp = [React.createElement(Cardmade, { "bg": "danger", "text": 'white', "className": "m-3", "name": series[index]["title"], "source": series[index]["thumbnail"]["path"] + '/portrait_uncanny.jpg' })]
-    return React.createElement("h1", null, "adsfs");
+    let temp = [React.createElement(Cardmade, { "bg": "danger", "text": 'white', "className": "m-3", "name": "Ant-Man (2003) #3", "source": 'http://i.annihil.us/u/prod/marvel/i/mg/d/70/4bc69c7e9b9d7' + '/portrait_uncanny.jpg' }),
+    React.createElement(Cardmade, { "bg": "danger", "text": 'white', "className": "m-3", "name": "Official Handbook of the Marvel Universe (2004) #13 (TEAMS)", "source": 'http://i.annihil.us/u/prod/marvel/i/mg/f/20/4bc63a47b8dcb' + '/portrait_uncanny.jpg' }),
+    React.createElement(Cardmade, { "bg": "danger", "text": 'white', "className": "m-3", "name": "ULTIMATE X-MEN VOL. 5: ULTIMATE WAR TPB (Trade Paperback)", "source": 'http://i.annihil.us/u/prod/marvel/i/mg/2/f0/4bc6670c80007' + '/portrait_uncanny.jpg' }),
+    React.createElement(Cardmade, { "bg": "danger", "text": 'white', "className": "m-3", "name": "Official Handbook of the Marvel Universe (2004) #11 (X-MEN - AGE OF APOCALYPSE)", "source": 'http://i.annihil.us/u/prod/marvel/i/mg/c/b0/4bc6494ed6eb4' + '/portrait_uncanny.jpg' }),
+    ]
+    return React.createElement(CardDeck, null, temp);
   }
     
 }
@@ -33,9 +37,6 @@ function Home() {
     <div>
       <Navigation />
       <br />
-      <div>
-        <h2>Popular Heroes</h2>
-      </div>
       <div>
         <h2>Random Suggestions</h2>
       </div>
