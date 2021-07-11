@@ -11,8 +11,6 @@ import Button from 'react-bootstrap/Button'
 import Cardmade from './card.jsx'
 
 
-
-
 function Cardlist() {
   return(
   <CardDeck className="font ">
